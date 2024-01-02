@@ -124,6 +124,12 @@ n_vector_insert(n_vector *vec, const size_t idx, const void *val)
 }
 
 int
+n_vector_insert_vec(n_vector *vec, const n_vector sub, const size_t idx)
+{
+	/* homework */
+}
+
+int
 n_vector_remove(n_vector *vec, const size_t idx, void *val)
 {
 	if (vec->len == 0)
