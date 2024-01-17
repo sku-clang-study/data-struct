@@ -63,8 +63,12 @@ int dll_insert(dll *, const int, const size_t);
 int dll_remove(dll *, const size_t, int *);
 int dll_getnth(dll *, const size_t, int *);
 int dll_setnth(dll *, const size_t, const int);
+<<<<<<< HEAD
 int dll_search_from_front(dll *, const int, size_t *);
 int dll_search_from_back(dll *, const int, size_t *);
+=======
+int dll_search(dll *, const size_t, int *);
+>>>>>>> de877bed094a0b599fa3a1963d1f14649b476ba8
 int dll_append(dll *, const dll *);
 int dll_append_sll(dll *, const sll *);
 void dll_free(const dll *);
