@@ -169,14 +169,6 @@ sll_append(sll *l_sll, const sll *r_sll)
     return 0;
 }
 
-int
-sll_append_dll(sll *sll, const dll *dll)
-{
-    /* TODO */
-
-    return 0;
-}
-
 static void
 sll_node_free(struct sll_node *node)
 {
@@ -448,14 +440,6 @@ dll_append(dll *l_dll, const dll *r_dll)
 
     l_dll->tail->next = r_dll->head;
     l_dll->len += r_dll->len;
-
-    return 0;
-}
-
-int
-dll_append_sll(dll *dll, const sll *sll)
-{
-    /* TODO */
 
     return 0;
 }
