@@ -16,3 +16,33 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+#include <stddef.h>
+
+typedef struct {
+    int *data;
+    size_t len;
+} vec;
+
+typedef struct {
+    vec vec;
+    size_t cnt;
+} vec_iter;
+
+vec vec_new();
+vec vec_from(const int *, const size_t);
+int vec_push_back(vec *, const int);
+int vec_pop_back(vec *, int *);
+int vec_push_front(vec *, const int);
+int vec_pop_front(vec *, int *);
+int vec_insert(vec *, const int, const size_t);
+int vec_remove(vec *, const size_t, int *);
+int vec_getnth(vec *, const size_t, int *);
+int vec_setnth(vec *, const size_t, const int);
+int vec_append(vec *, const vec *);
+void vec_free(const vec);
+
+vec_iter vec_iter_new(vec *);
+int vec_iter_next(vec_iter *, int *);
+int vec_iter_map(vec_iter *, int (*)(int), vec *);
+int vec_iter_foreach(vec_iter *, int (*)(int));
