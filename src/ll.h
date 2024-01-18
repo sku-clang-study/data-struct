@@ -51,7 +51,7 @@ int sll_getnth(sll *, const size_t, int *);
 int sll_setnth(sll *, const size_t, const int);
 int sll_search(sll *, const int, size_t *);
 int sll_append(sll *, const sll *);
-void sll_free(const sll *);
+void sll_free(const sll);
 
 dll dll_new();
 int dll_push_back(dll *, const int);
@@ -65,4 +65,4 @@ int dll_setnth(dll *, const size_t, const int);
 int dll_search_from_front(dll *, const int, size_t *);
 int dll_search_from_back(dll *, const int, size_t *);
 int dll_append(dll *, const dll *);
-void dll_free(const dll *);
+void dll_free(const dll);

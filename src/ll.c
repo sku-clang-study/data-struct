@@ -178,9 +178,9 @@ sll_node_free(struct sll_node *node)
 }
 
 void
-sll_free(const sll *sll)
+sll_free(const sll sll)
 {
-    sll_node_free(sll->head);
+    sll_node_free(sll.head);
 }
 
 dll
@@ -453,7 +453,7 @@ dll_node_free(struct dll_node *node)
 }
 
 void
-dll_free(const dll *dll)
+dll_free(const dll dll)
 {
-    dll_node_free(dll->head);
+    dll_node_free(dll.head);
 }
