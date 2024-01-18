@@ -183,6 +183,54 @@ sll_free(const sll sll)
     sll_node_free(sll.head);
 }
 
+sll_iter
+sll_iter_new(sll sll)
+{
+    sll_iter iter = { sll, NULL };
+    return iter;
+}
+
+int
+sll_iter_next(sll_iter *iter, int *data)
+{
+    if (iter->cur == NULL)
+        iter->cur = iter->sll.head;
+    else
+        iter->cur = iter->cur->next;
+
+    *data = iter->cur->data;
+
+    return 0;
+}
+
+int
+sll_iter_foreach(sll_iter *iter, int (*fn)(int item))
+{
+    if (iter->cur == NULL)
+        iter->cur = iter->sll.head;
+
+    while (iter->cur != NULL) {
+        iter->cur->data = (*fn)(iter->cur->data);
+        iter->cur = iter->cur->next;
+    }
+
+    return 0;
+}
+
+int
+sll_iter_map(sll_iter *iter, int (*fn)(int item), sll *sll)
+{
+    if (iter->cur == NULL)
+        iter->cur = iter->sll.head;
+
+    while (iter->cur != NULL) {
+        sll_push_back(sll, (*fn)(iter->cur->data));
+        iter->cur = iter->cur->next;
+    }
+
+    return 0;
+}
+
 dll
 dll_new()
 {
@@ -456,4 +504,52 @@ void
 dll_free(const dll dll)
 {
     dll_node_free(dll.head);
+}
+
+dll_iter
+dll_iter_new(dll dll)
+{
+    dll_iter iter = { dll, NULL };
+    return iter;
+}
+
+int
+dll_iter_next(dll_iter *iter, int *data)
+{
+    if (iter->cur == NULL)
+        iter->cur = iter->dll.head;
+    else
+        iter->cur = iter->cur->next;
+
+    *data = iter->cur->data;
+
+    return 0;
+}
+
+int
+dll_iter_foreach(dll_iter *iter, int (*fn)(int item))
+{
+    if (iter->cur == NULL)
+        iter->cur = iter->dll.head;
+
+    while (iter->cur != NULL) {
+        iter->cur->data = (*fn)(iter->cur->data);
+        iter->cur = iter->cur->next;
+    }
+
+    return 0;
+}
+
+int
+dll_iter_map(dll_iter *iter, int (*fn)(int item), dll *dll)
+{
+    if (iter->cur == NULL)
+        iter->cur = iter->dll.head;
+
+    while (iter->cur != NULL) {
+        dll_push_back(dll, (*fn)(iter->cur->data));
+        iter->cur = iter->cur->next;
+    }
+
+    return 0;
 }

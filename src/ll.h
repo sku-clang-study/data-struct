@@ -30,6 +30,11 @@ typedef struct {
     size_t len;
 } sll;
 
+typedef struct {
+    sll sll;
+    struct sll_node *cur;
+} sll_iter;
+
 struct dll_node {
     int data;
     struct dll_node *next;
@@ -41,6 +46,11 @@ typedef struct {
     struct dll_node *tail;
     size_t len;
 } dll;
+
+typedef struct {
+    dll dll;
+    struct dll_node *cur;
+} dll_iter;
 
 sll sll_new();
 int sll_push_back(sll *, const int);
@@ -66,3 +76,13 @@ int dll_search_from_front(dll *, const int, size_t *);
 int dll_search_from_back(dll *, const int, size_t *);
 int dll_append(dll *, const dll *);
 void dll_free(const dll);
+
+sll_iter sll_iter_new(sll);
+int sll_iter_next(sll_iter *, int *);
+int sll_iter_foreach(sll_iter *, int (*)(int));
+int sll_iter_map(sll_iter *, int (*)(int), sll *);
+
+dll_iter dll_iter_new(dll);
+int dll_iter_next(dll_iter *, int *);
+int dll_iter_foreach(dll_iter *, int (*)(int));
+int dll_iter_map(dll_iter *, int (*)(int), dll *);
