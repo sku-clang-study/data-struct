@@ -3,7 +3,7 @@ A collection of useful data structures written in C.
 
 ## Data structures
 | file name | data structure name | insert | remove | search |
-|-----------|---------------------|--------|--------|--------|
+|:---------:|---------------------|--------|--------|--------|
 | ll.h | (Double, Singly)Linked List | O(1) | O(n) | O(n) |
 | avl\_map.h, avl\_set.h | AVL tree | O(log n) | O(log n) | O(log n) |
 | rb\_map.h, rb\_set.h | Red-Black tree | O(log n) | O(log n) | O(log n) |
