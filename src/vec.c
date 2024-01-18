@@ -169,9 +169,9 @@ vec_free(const vec vec)
 }
 
 vec_iter
-vec_iter_new(vec *vec)
+vec_iter_new(vec vec)
 {
-    vec_iter iter = { *vec, 0 };
+    vec_iter iter = { vec, 0 };
     return iter;
 }
 

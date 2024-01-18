@@ -42,7 +42,7 @@ int vec_setnth(vec *, const size_t, const int);
 int vec_append(vec *, const vec *);
 void vec_free(const vec);
 
-vec_iter vec_iter_new(vec *);
+vec_iter vec_iter_new(vec);
 int vec_iter_next(vec_iter *, int *);
-int vec_iter_map(vec_iter *, int (*)(int), vec *);
 int vec_iter_foreach(vec_iter *, int (*)(int));
+int vec_iter_map(vec_iter *, int (*)(int), vec *);
