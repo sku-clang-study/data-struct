@@ -79,10 +79,10 @@ void dll_free(const dll);
 
 sll_iter sll_iter_new(sll);
 int sll_iter_next(sll_iter *, int *);
-int sll_iter_foreach(sll_iter *, int (*)(int));
+int sll_iter_for_each(sll_iter *, int (*)(int));
 int sll_iter_map(sll_iter *, int (*)(int), sll *);
 
 dll_iter dll_iter_new(dll);
 int dll_iter_next(dll_iter *, int *);
-int dll_iter_foreach(dll_iter *, int (*)(int));
+int dll_iter_for_each(dll_iter *, int (*)(int));
 int dll_iter_map(dll_iter *, int (*)(int), dll *);

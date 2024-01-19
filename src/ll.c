@@ -204,7 +204,7 @@ sll_iter_next(sll_iter *iter, int *data)
 }
 
 int
-sll_iter_foreach(sll_iter *iter, int (*fn)(int item))
+sll_iter_for_each(sll_iter *iter, int (*fn)(int item))
 {
     if (iter->cur == NULL)
         iter->cur = iter->sll.head;
@@ -527,7 +527,7 @@ dll_iter_next(dll_iter *iter, int *data)
 }
 
 int
-dll_iter_foreach(dll_iter *iter, int (*fn)(int item))
+dll_iter_for_each(dll_iter *iter, int (*fn)(int item))
 {
     if (iter->cur == NULL)
         iter->cur = iter->dll.head;

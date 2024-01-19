@@ -196,7 +196,7 @@ vec_iter_map(vec_iter *iter, int (*fn)(int item), vec *new)
 }
 
 int
-vec_iter_foreach(vec_iter *iter, int (*fn)(int item))
+vec_iter_for_each(vec_iter *iter, int (*fn)(int item))
 {
     for (size_t i = 0; i < iter->vec.len; i++)
         iter->vec.data[i] = (*fn)(iter->vec.data[i]);
