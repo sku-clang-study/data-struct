@@ -5,7 +5,7 @@ A collection of useful data structures written in C.
 | file name | data structure name | insert | remove | search |
 |:---------:|---------------------|--------|--------|--------|
 | vec.h | Vector(Double-Ended Queue) | O(n) | O(n) | O(1) |
-| ll.h | (Double, Singly)Linked List | O(1) | O(n) | O(n) |
+| ll.h | (Double, Singly) Linked List | O(n) | O(n) | O(n) |
 | bst\_map.h, bst\_set.h | Binary Search Tree | O(log n) ~ O(n) | O(log n) ~ O(n) | O(log n) ~ O(n) | 
 | avl\_map.h, avl\_set.h | AVL tree | O(log n) | O(log n) | O(log n) |
 | rb\_map.h, rb\_set.h | Red-Black tree | O(log n) | O(log n) | O(log n) |
