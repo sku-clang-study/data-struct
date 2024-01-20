@@ -119,3 +119,19 @@ bst_map_search(bst_map *map, const int key, int *val)
 
     return -1;
 }
+
+static void
+recursive_free(struct bst_node *node)
+{
+    if (node->left != NULL)
+        recursive_free(node->left);
+    if (node->right != NULL)
+        recursive_free(node->right);
+    free(node);
+}
+
+void
+bst_map_free(const bst_map map)
+{
+    recursive_free(map.root);
+}

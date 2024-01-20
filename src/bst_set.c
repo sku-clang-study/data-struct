@@ -117,3 +117,19 @@ bst_set_search(bst_set *set, const int key)
 
     return 0;
 }
+
+static void
+recursive_free(struct bst_node *node)
+{
+    if (node->left != NULL)
+        recursive_free(node->left);
+    if (node->right != NULL)
+        recursive_free(node->right);
+    free(node);
+}
+
+void
+bst_set_free(const bst_set set)
+{
+    recursive_free(set.root);
+}
